@@ -21,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.photos.PhotosActivity"/>
+        <activity android:name=".ui.photos.PhotosFragment"
+            android:label="photos_title">
+        </activity>
+
+
     </application>
 
 </manifest>

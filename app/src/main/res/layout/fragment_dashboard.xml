@@ -37,7 +37,7 @@
         android:background="@color/main"
         android:text="Notes"
         app:layout_constraintStart_toEndOf="@+id/diaryBtn"
-        app:layout_constraintTop_toBottomOf="@+id/vidoesBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/videosBtn" />
 
     <Button
         android:id="@+id/photosBtn"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/photosBtn" />
 
     <Button
-        android:id="@+id/vidoesBtn"
+        android:id="@+id/videosBtn"
         android:layout_width="151dp"
         android:layout_height="125dp"
         android:layout_marginStart="35dp"
