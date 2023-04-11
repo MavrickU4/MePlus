@@ -15,9 +15,24 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
+<!--            <intent-filter>-->
+                <intent-filter>
+                    <action android:name="android.intent.action.BOOT_COMPLETED" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER"
+            </intent-filter>/>-->
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login_activity_title"
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
