@@ -13,29 +13,38 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.provider.BaseColumns
+import com.example.meplus.databinding.ActivityLogin2Binding
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity2 : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityLogin2Binding
     private lateinit var dbHelper: DatabaseHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+
+        binding = ActivityLogin2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        val loginButton = binding.loginbtn
+
+        binding.createNewAccount.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+            //Toast.makeText(context, "This is a toast message", Toast.LENGTH_SHORT).show()
+
+        }
+
+        val loginButton = binding.buttonLogin
         dbHelper = DatabaseHelper(this)
 
-        val demoLoginButton = binding.demoLoginBtn
+        val demoLoginButton = binding.demoLoginBtn2
         demoLoginButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
         loginButton.setOnClickListener {
-            val email = binding.username.text.toString()
-            val password = binding.password.text.toString()
+            val email = binding.inputEmail.text.toString()
+            val password = binding.inputPassword.text.toString()
 
             if (dbHelper.authenticateUser(email, password)) {
                 startActivity(Intent(this, MainActivity::class.java))
@@ -48,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
 
 }
 
-class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DatabaseHelper2(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(DatabaseContract.SQL_CREATE_ENTRIES)
@@ -92,7 +101,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 }
 
-object DatabaseContract {
+object DatabaseContract2 {
     /* Inner class that defines the table contents */
     class UserEntry : BaseColumns {
         companion object {
@@ -111,3 +120,5 @@ object DatabaseContract {
 
     const val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS ${UserEntry.TABLE_NAME}"
 }
+
+
