@@ -17,7 +17,7 @@ tools:context=".RegisterActivity"
         android:layout_height="match_parent"
         android:fillViewport="true"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="38dp">
+        tools:layout_editor_absoluteY="-16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -62,6 +62,30 @@ tools:context=".RegisterActivity"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <EditText
+                android:id="@+id/inputName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/input_rose0002"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingTop="13dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="13dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
                 android:id="@+id/inputPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -83,7 +107,7 @@ tools:context=".RegisterActivity"
                 app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
             <EditText
-                android:id="@+id/inputConformPassword"
+                android:id="@+id/inputConfirmPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -91,7 +115,7 @@ tools:context=".RegisterActivity"
                 android:drawableStart="@drawable/baseline_security_24"
                 android:drawablePadding="10dp"
                 android:ems="10"
-                android:hint="Conform Password"
+                android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:paddingTop="13dp"
@@ -112,10 +136,10 @@ tools:context=".RegisterActivity"
                 android:background="@drawable/input_rose0002"
                 android:text="Register"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputConformPassword"
+                app:layout_constraintEnd_toEndOf="@+id/inputConfirmPassword"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/inputPassword"
-                app:layout_constraintTop_toBottomOf="@+id/inputConformPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword" />
 
             <TextView
                 android:id="@+id/alreadyhaveaccount"

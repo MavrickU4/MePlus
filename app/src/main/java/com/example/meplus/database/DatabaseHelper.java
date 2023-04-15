@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.example.meplus.RegisterActivity;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "meplus.db";
@@ -37,6 +41,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Handle database schema upgrades here
     }
 
+    public long adUser(String name, String email, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_EMAIL, email);
+        values.put(COLUMN_PASSWORD, password);
+        long newRowId = db.insert(TABLE_USERS, null, values);
+        Log.d("User details DBH", "Name: " + name + ", Email: " + email + ", Password: " + password);
+
+        db.close();
+        return newRowId;
+    }
+
     public boolean authenticateUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -62,19 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return authenticated;
     }
 
-    public long addUser(String name, String email, String password) {
-        SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, name);
-        values.put(COLUMN_EMAIL, email);
-        values.put(COLUMN_PASSWORD, password);
-
-        long newRowId = db.insert(TABLE_USERS, null, values);
-        db.close();
-
-        return newRowId;
-    }
 }
 
 
