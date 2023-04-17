@@ -36,18 +36,29 @@ class DashboardFragment : Fragment() {
 
         photosButton = root.findViewById(R.id.photosBtn)
         photosButton.setOnClickListener {
-            //Log.d("PhotosFragment", "onCreateView()")
-            Toast.makeText(activity, "Button clicked", Toast.LENGTH_SHORT).show()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
             val fragment = PhotosFragment()
-            fragmentTransaction.replace(R.id.photos_container, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_main, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        // Add click listener to root view to dismiss PhotosFragment when clicked outside
+        root.setOnClickListener {
+            val fragment = requireActivity().supportFragmentManager.findFragmentById(R.id.photos_container)
+            if (fragment != null) {
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .remove(fragment)
+                    .commit()
+                Toast.makeText(context, "dd", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return root
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

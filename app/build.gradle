@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+ext {
+    nav_version = "2.4.0"
+}
+
 android {
     namespace 'com.example.meplus'
     compileSdk 33
@@ -36,6 +40,7 @@ android {
 }
 
 dependencies {
+    def nav_version = rootProject.ext.nav_version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

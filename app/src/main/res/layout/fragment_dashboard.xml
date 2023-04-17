@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".ui.dashboard.DashboardFragment">
 
     <Button
@@ -44,7 +45,7 @@
         android:layout_width="151dp"
         android:layout_height="125dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="25dp"
         android:background="@color/main"
         android:text="Photos"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +67,7 @@
         android:layout_width="151dp"
         android:layout_height="125dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="25dp"
         android:background="@color/main"
         android:text="Videos"
         app:layout_constraintStart_toEndOf="@+id/photosBtn"
