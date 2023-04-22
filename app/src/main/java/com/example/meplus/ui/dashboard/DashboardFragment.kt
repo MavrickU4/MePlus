@@ -12,12 +12,14 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import com.example.meplus.R
 import com.example.meplus.databinding.FragmentDashboardBinding
+import com.example.meplus.ui.VideosFragment
 import com.example.meplus.ui.photos.PhotosFragment
 
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private lateinit var photosButton: Button
+    private lateinit var videosButton: Button
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,6 +39,17 @@ class DashboardFragment : Fragment() {
         photosButton = root.findViewById(R.id.photosBtn)
         photosButton.setOnClickListener {
             val fragment = PhotosFragment()
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_main, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+
+        videosButton = root.findViewById(R.id.videosBtn)
+        videosButton.setOnClickListener {
+            val fragment = VideosFragment()
             val fragmentManager = requireActivity().supportFragmentManager
             fragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_content_main, fragment)
