@@ -40,6 +40,17 @@ class HomeFragment : Fragment() {
             requireActivity().finish()
         }
 
+        val profileButton = binding.profileBtn
+        profileButton.setOnClickListener {
+            val fragment = ProfileFragment()
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_main, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+
         return view
     }
 }

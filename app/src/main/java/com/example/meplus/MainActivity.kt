@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_content_main, HomeFragment())
+            .addToBackStack(null)
+            .commit()
+        true
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

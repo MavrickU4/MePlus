@@ -16,8 +16,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_USERS = "users";
     private static final String COLUMN_ID = "_id";
-    private static final String COLUMN_NAME = "name";
-    private static final String COLUMN_EMAIL = "email";
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_PASSWORD = "password";
 
     private static final String SQL_CREATE_USERS_TABLE =
@@ -78,6 +78,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return authenticated;
     }
+
+
+    public Cursor readUser(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] projection = { COLUMN_NAME, COLUMN_EMAIL };
+        String selection = COLUMN_EMAIL + " = ?";
+        String[] selectionArgs = { email };
+
+        Cursor cursor = db.query(
+                TABLE_USERS,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        return cursor;
+    }
+
+
 
 
 }

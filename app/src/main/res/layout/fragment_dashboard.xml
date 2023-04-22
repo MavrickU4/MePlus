@@ -8,7 +8,7 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <Button
-        android:id="@+id/memoryBtn"
+        android:id="@+id/gamesBtn"
         android:layout_width="151dp"
         android:layout_height="125dp"
         android:layout_marginStart="35dp"
@@ -16,7 +16,7 @@
         android:background="@color/main"
         android:text="Memory Games"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diaryBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/communicateBtn" />
 
     <Button
         android:id="@+id/testBtn"
@@ -26,18 +26,18 @@
         android:layout_marginTop="35dp"
         android:background="@color/main"
         android:text="Memory Testing"
-        app:layout_constraintStart_toEndOf="@+id/memoryBtn"
-        app:layout_constraintTop_toBottomOf="@+id/Notes" />
+        app:layout_constraintStart_toEndOf="@+id/gamesBtn"
+        app:layout_constraintTop_toBottomOf="@+id/notesBtn" />
 
     <Button
-        android:id="@+id/Notes"
+        android:id="@+id/notesBtn"
         android:layout_width="151dp"
         android:layout_height="125dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="35dp"
         android:background="@color/main"
         android:text="Notes"
-        app:layout_constraintStart_toEndOf="@+id/diaryBtn"
+        app:layout_constraintStart_toEndOf="@+id/communicateBtn"
         app:layout_constraintTop_toBottomOf="@+id/videosBtn" />
 
     <Button
@@ -52,13 +52,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/diaryBtn"
+        android:id="@+id/communicateBtn"
         android:layout_width="151dp"
         android:layout_height="125dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="35dp"
         android:background="@color/main"
-        android:text="Diary"
+        android:text="Communicate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/photosBtn" />
 

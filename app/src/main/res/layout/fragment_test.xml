@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photos_container_outer"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="240pt"
+    android:columnCount="1"
+    android:rowCount="1"
+    android:padding="10dp"
+    android:background="#FFFFFF"
+    tools:context=".ui.photos.PhotosFragment">
+
+    <GridLayout
+        android:id="@+id/photos_container"
+        android:layout_width="match_parent"
+        android:layout_height="441dp"
+        android:background="#FFFFFF"
+        android:columnCount="1"
+        android:padding="10dp"
+        android:rowCount="1"
+        tools:context=".ui.photos.PhotosFragment">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test" />
+
+
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/addPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="20dp"
+        android:text="Begin Test" />
+</GridLayout>
