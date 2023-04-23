@@ -128,11 +128,12 @@ tools:context=".RegisterActivity"
                 app:layout_constraintStart_toStartOf="@+id/inputEmail"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
+
             <Button
                 android:id="@+id/buttonRegister"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="74dp"
                 android:background="@drawable/input_rose0002"
                 android:text="Register"
                 android:textColor="@color/white"
@@ -164,6 +165,26 @@ tools:context=".RegisterActivity"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/meplusu" />
 
+            <Spinner
+                android:id="@+id/accountTypeSpinner"
+                android:layout_width="363dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="-110dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/input_rose0002"
+                android:contentDescription="Account Type"
+                android:paddingLeft="20dp"
+                android:paddingTop="13dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="13dp"
+                android:spinnerMode="dropdown"
+                android:textColor="#FFFFFF"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/inputConfirmPassword"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

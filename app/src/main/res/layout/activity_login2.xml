@@ -212,8 +212,10 @@
                 android:layout_marginStart="140dp"
                 android:layout_marginTop="43dp"
                 android:text="Demo Login"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

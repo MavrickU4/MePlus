@@ -8,4 +8,16 @@
     <string name="sign_in">Sign in</string>
     <string name="password">Password</string>
     <string name="login_activity_title">Login</string>
+    <string-array name="account_types">
+        <item>Dementia Patient (Level 1) </item>
+        <item>Dementia Patient (Level 2-3) </item>
+        <item>Dementia Patient (Level 4-5) </item>
+        <item>Dementia Patient (Level 6-7) </item>
+        <item>Friend or Family Member</item>
+        <item>Caregiver</item>
+        <item>Doctor</item>
+        <item>Other</item>
+    </string-array>
+
+
 </resources>

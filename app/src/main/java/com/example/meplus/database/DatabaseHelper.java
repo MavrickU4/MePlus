@@ -19,17 +19,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_PASSWORD = "password";
+    private static final String COLUMN_ACCOUNT_TYPE = "account_type";
 
     private static final String SQL_CREATE_USERS_TABLE =
             "CREATE TABLE " + TABLE_USERS + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_NAME + " TEXT, " +
                     COLUMN_EMAIL + " TEXT, " +
-                    COLUMN_PASSWORD + " TEXT)";
+                    COLUMN_PASSWORD + " TEXT, " +
+                    COLUMN_ACCOUNT_TYPE + " TEXT)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -41,14 +44,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Handle database schema upgrades here
     }
 
-    public long adUser(String name, String email, String password) {
+    public long adUser(String name, String email, String password, String accountType) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, name);
         values.put(COLUMN_EMAIL, email);
         values.put(COLUMN_PASSWORD, password);
+        values.put(COLUMN_ACCOUNT_TYPE, accountType);
         long newRowId = db.insert(TABLE_USERS, null, values);
-        Log.d("User details DBH", "Name: " + name + ", Email: " + email + ", Password: " + password);
+        Log.d("User details DBH", "Name: " + name + ", Email: " + email + ", Password: " + password + ", Account Type: " + accountType);
 
         db.close();
         return newRowId;
@@ -80,10 +84,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
     public Cursor readUser(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String[] projection = { COLUMN_NAME, COLUMN_EMAIL };
+        String[] projection = { COLUMN_NAME, COLUMN_EMAIL, COLUMN_ACCOUNT_TYPE };
         String selection = COLUMN_EMAIL + " = ?";
         String[] selectionArgs = { email };
 
@@ -99,10 +104,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
-
-
-
-
 }
-
 
